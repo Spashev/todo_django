@@ -1,0 +1,31 @@
+{% extends 'todo/dashboard.html' %}
+
+{% block content %}
+<div class="block">
+    <div class="block-header">
+        <h3 class="block-title">Task</h3>
+    </div>
+    <div class="block-content block-content-full">
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-8 col-xl-5">
+                    <div class="form-group">
+                        <label for="example-text-input-alt">Text</label>
+                        {{ form.description }}
+                    </div>
+                    <div class="form-group">
+                        <label for="example-password-input-alt">Status</label>
+                        {{form.status}}
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info float-right">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
